@@ -1,6 +1,8 @@
 from product_manager import ProductManager
+from cart import Cart
 # Define the list of products, each product is a tuple: (product name,price per unit, quantity)
-products = [     ("Laptop", 800.00, 10),
+products = [     
+    ("Laptop", 800.00, 10),
     ("Smartphone", 500.00, 25),
     ("Headphones", 30.00, 50),
     ("Monitor", 150.00, 15),
@@ -36,4 +38,14 @@ for product in products:
 # Print the total inventory value
 print(f"The total value of all inventory is: ${total_inventory_value:.2f}")
 
-
+cart_items = [
+    ("Smartphone", 500.00, 1),
+    ("Headphones", 30.00, 2),
+    ("Monitor", 150.00, 1)
+]
+for product in products:
+    cart_items.append {product[0]}
+    cart_items.append {product[1]}
+    cart_items.append {product[2]}
+    total_cart_items = sum (price() * quantity, quantity in cart_items())
+print(total_cart_items)
