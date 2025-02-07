@@ -12,3 +12,5 @@ class Product:
 
     def show_total_quantity(self):
         return self.quantity * self.name
+    
+    
