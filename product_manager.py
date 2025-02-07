@@ -5,6 +5,17 @@ class ProductManager:
         self.name = name
         self.price = price
         self.quantity = quantity
+    def add_product_removal():
+        #return product_removal
+        for i in products.lower():    #parcurgem fiecare produs din lista            
+            return products
+        while True:
+            name = input("introduceti numeprodus: ") 
+            quantity = quantity(products)
+            print(f"Produsul {name} contine {quantity}")
+            if quantity == 0:
+                print(f"Produsul{name} trebuie eliminat din lista {products}")
+                break
 
 # Define the list of products, each product is a tuple: (product name,price per unit, quantity)
 products = [     ("Laptop", 800.00, 10),
@@ -15,7 +26,7 @@ products = [     ("Laptop", 800.00, 10),
     ("Mouse", 15.00, 60)
 ]
 
-
+   
 
 
 
