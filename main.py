@@ -30,8 +30,9 @@ for product in products:
     quantity = product[1]
     price = product[2]
     # Calculate the inventory value for the product
-    inventory_value = quantity * price     # Add to the total inventory value
-    total_inventory_value += inventory_value
+    inventory_value = input(quantity * price)     # Add to the total inventory value
+    total_inventory_value = input(inventory_value)
+    print(total_inventory_value)
     # Optional: Print the inventory value for each product
     # print(f"{name}: Quantity = {quantity}, Price = ${price:.2f}, Inventory Value = ${inventory_value:.2f}")
 
@@ -47,5 +48,6 @@ for product in products:
     cart_items.append [product[0]]
     cart_items.append [product[1]]
     cart_items.append [product[2]]
-    total_cart_items = sum (price() * quantity, quantity in cart_items())
+    cart_items = input(sum (price() * quantity, quantity in cart_items()))
+    total_cart_items = int(cart_items)
 print(total_cart_items)
