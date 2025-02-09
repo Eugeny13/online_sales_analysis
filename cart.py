@@ -12,4 +12,4 @@ class Cart:
         quantity = 0
         return sum (price() * quantity for product, quantity in self.cart_items())
     def display_info(cart_items):
-        return(f("Cart: {self.cart_items}, total spent: {total_spent}"))
+        return("Cart: {self.cart_items}, total spent: {total_spent}")

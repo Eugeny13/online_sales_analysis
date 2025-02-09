@@ -44,8 +44,8 @@ cart_items = [
     ("Monitor", 150.00, 1)
 ]
 for product in products:
-    cart_items.append {product[0]}
-    cart_items.append {product[1]}
-    cart_items.append {product[2]}
+    cart_items.append [product[0]]
+    cart_items.append [product[1]]
+    cart_items.append [product[2]]
     total_cart_items = sum (price() * quantity, quantity in cart_items())
 print(total_cart_items)
