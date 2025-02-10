@@ -21,10 +21,10 @@ def main():
     manager.add_product(Product("Keyboard", 20.00, 10))
     manager.add_product(Product("Monitor", 150.00, 7))
 
-    #manager.display_all_products()
+    manager.display_all_products()
 
-    #total_value = manager.total_inventory_value()
-    #print(f"\nTotal Inventory Value: ${total_value:.2f}")
+    total_value = manager.total_inventory_value()
+    print(f"\nTotal Inventory Value: ${total_value:.2f}")
     
     cart = Cart()
 
