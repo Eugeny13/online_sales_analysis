@@ -1,5 +1,7 @@
 from product_manager import ProductManager
+from product import Product
 from cart import Cart
+import random
 # Define the list of products, each product is a tuple: (product name,price per unit, quantity)
 products = [     
     ("Laptop", 800.00, 10),
@@ -10,44 +12,36 @@ products = [
     ("Mouse", 15.00, 60)
 ]
 
-# Adding a new product to the end of the list
-products.append("Tablet")
-print(products)
 
-products_on_sale = ("Laptop", "Monitor", "Mouse")
-new_category = ("Headphones", "Camera")
+def main():
+    manager = ProductManager()
 
-# Merging two tuples
-all_products = products_on_sale + new_category
-print(all_products) 
+    manager.add_product(Product("Laptop", 800.00, 5))
+    manager.add_product(Product("Mouse", 15.00, 15))
+    manager.add_product(Product("Keyboard", 20.00, 10))
+    manager.add_product(Product("Monitor", 150.00, 7))
 
-# Initialize total inventory value
-total_inventory_value = 0.0
+    #manager.display_all_products()
 
-# Iterate over the list of products
-for product in products:
-    name = product[0]
-    quantity = product[1]
-    price = product[2]
-    # Calculate the inventory value for the product
-    inventory_value = input(quantity * price)     # Add to the total inventory value
-    total_inventory_value = input(inventory_value)
-    print(total_inventory_value)
-    # Optional: Print the inventory value for each product
-    # print(f"{name}: Quantity = {quantity}, Price = ${price:.2f}, Inventory Value = ${inventory_value:.2f}")
+    #total_value = manager.total_inventory_value()
+    #print(f"\nTotal Inventory Value: ${total_value:.2f}")
+    
+    cart = Cart()
 
-# Print the total inventory value
-print(f"The total value of all inventory is: ${total_inventory_value:.2f}")
+    products = manager.products  
+    for _ in range(3):
+        product = random.choice(products)  #
+        max_quantity = min(product.quantity, 3)  
+        if max_quantity > 0:  
+            quantity = random.randint(1, max_quantity)  #
+            cart.add_to_cart(product, quantity)
 
-cart_items = [
-    ("Smartphone", 500.00, 1),
-    ("Headphones", 30.00, 2),
-    ("Monitor", 150.00, 1)
-]
-for product in products:
-    cart_items.append [product[0]]
-    cart_items.append [product[1]]
-    cart_items.append [product[2]]
-    cart_items = input(sum (price() * quantity, quantity in cart_items()))
-    total_cart_items = int(cart_items)
-print(total_cart_items)
+
+    print("\nCart Contents:")
+    cart.display_cart()
+
+    cart_total = cart.calculate_total()
+    print(f"\nTotal Cart Value: ${cart_total:.2f}")
+
+if __name__ == "__main__":
+    main()
